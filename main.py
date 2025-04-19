@@ -26,6 +26,15 @@ class Database:
         return d
     
     def get_table(self, table_name: str) -> list[dict]:
+        """Returns all table content
+
+        Args:
+            table_name (str): Table name
+
+        Returns:
+            list[dict]: a list with dict content. example: [{'id': 1, 'name': 'John Doe'}]
+        """
+        
         self.cursor.execute(f"SELECT * FROM {table_name}")
         return self.cursor.fetchall()
 
